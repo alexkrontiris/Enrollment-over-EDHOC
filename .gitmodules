@@ -1,0 +1,6 @@
+[submodule "COSE-C"]
+	path = COSE-C
+	url = https://github.com/alexkrontiris/COSE-C
+[submodule "libcbor"]
+	path = libcbor
+	url = https://github.com/alexkrontiris/libcbor
