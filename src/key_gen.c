@@ -22,8 +22,8 @@ EVP_PKEY *gen_ECDSA_p256_key_pair(char *path)
 	// IO BIO
 	outbio  = BIO_new(BIO_s_file());
 	outbio = BIO_new_fp(stdout, BIO_NOCLOSE);
-	char *filename_pub = malloc(64);
-	char *filename_pri = malloc(64);
+	char *filename_pub = malloc(41);
+	char *filename_pri = malloc(41);
 	strcat(filename_pub, path);
 	strcat(filename_pub, "ec_pubkey.pem");
 	strcat(filename_pri, path);
@@ -61,6 +61,8 @@ EVP_PKEY *gen_ECDSA_p256_key_pair(char *path)
 	// Free structs
 	EC_KEY_free(eckey);
 	BIO_free_all(outbio);
+	BIO_free_all(outbio_pri);
+	BIO_free_all(outbio_pub);
 	free(filename_pub);
 	free(filename_pri);
 

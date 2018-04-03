@@ -16,6 +16,8 @@ ENROLLMENT_MSGS	= ./edhoc_server_INBOX/CSR.pem
 
 RSA_KEYS	= ./rsa-client-keys/rsa_privkey.pem ./rsa-client-keys/rsa_pubkey.pem ./rsa-server-keys/rsa_privkey.pem ./rsa-server-keys/rsa_pubkey.pem
 
+EC_KEYS	= ./ecdsa-client-keys/ec_privkey.pem ./ecdsa-client-keys/ec_pubkey.pem ./ecdsa-server-keys/ec_privkey.pem ./ecdsa-server-keys/ec_pubkey.pem
+
 CERTS	= ./cert-client/client-cert.p7b ./cert-client/client-cert.pem ./cert-server/CA-cert.pem ./edhoc_client_INBOX/client-certificate.p7b
 
 CLIENT_TARGET	=	edhoc-client
@@ -30,4 +32,4 @@ $(SERVER_TARGET) : $(SERVER_OBJFILES)
 	$(CC) $(CFLAGS) -o $(SERVER_TARGET) $(SERVER_OBJFILES) $(LDFLAGS)
 
 clean:
-	rm $(ALL_OBJFILES) $(CLIENT_TARGET) $(SERVER_TARGET) $(EDHOC_MSGS) $(EDHOC_KEYS) $(EDHOC_INP_PARAM) $(ENROLLMENT_MSGS) $(RSA_KEYS) $(CERTS)
+	rm $(ALL_OBJFILES) $(CLIENT_TARGET) $(SERVER_TARGET) $(EDHOC_MSGS) $(EDHOC_KEYS) $(EDHOC_INP_PARAM) $(ENROLLMENT_MSGS) $(RSA_KEYS) $(EC_KEYS) $(CERTS)
